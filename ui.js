@@ -20,3 +20,7 @@ UI.prototype.clearInputs = function(element1, element2, element3) {
     element2.value = "";
     element3.value = "";
 }
+
+UI.prototype.deleteFilmFromUI = function(element) {
+  tBody.removeChild(element.parentElement.parentElement);
+}

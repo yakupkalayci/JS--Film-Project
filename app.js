@@ -2,6 +2,7 @@ const form = document.querySelector("#filmForm");
 const titleDOM = document.querySelector("#filmName");
 const directorDOM = document.querySelector("#filmDirector");
 const linkDOM = document.querySelector("#filmPosterLink");
+const tBody = document.querySelector("#films");
 
 const deleteButtons = [];
 
@@ -17,6 +18,7 @@ eventListeners();
 function eventListeners() {
     form.addEventListener("submit", addFilm);
     document.addEventListener("DOMContentLoaded", storage.getFilmsFromStorage());
+    tBody.addEventListener("click", deleteFilm);
 }
 
 function addFilm(e) {
@@ -35,4 +37,10 @@ function addFilm(e) {
     }
     ui.clearInputs(titleDOM, directorDOM, linkDOM);
     e.preventDefault();
+}
+
+function deleteFilm(e) {
+    if(e.target.id === "delete-film") {
+        ui.deleteFilmFromUI(e.target);
+    }
 }
