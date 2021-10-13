@@ -17,9 +17,11 @@ Storage.prototype.addFilmtoStorage = function(newFilm) {
 Storage.prototype.getFilmsFromStorage = function() {
     let films = JSON.parse(localStorage.getItem(this.name));
     let uiObject = new UI();
-    films.forEach((film) => {
-        uiObject.addFilmtoUI(film);
-    })
+    if(films) {
+        films.forEach((film) => {
+            uiObject.addFilmtoUI(film);
+        })
+    }
 }
 
 Storage.prototype.deleteFilmFromStorage = function(element) {
