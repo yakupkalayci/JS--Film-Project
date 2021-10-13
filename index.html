@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Film Project</title>
+    <!--Bootstrap CSS-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+        integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+    <!--CSS-->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="mr-1" style="position: relative">
+        <div style="position: absolute; top: 0; right: 0;">
+          <div
+            id="liveToast"
+            class="toast success hide"
+            role="alert"
+            aria-live="assertive"
+            aria-atomic="true"
+            data-delay="4000"
+          >
+            <div>
+              <button
+                type="button"
+                class="close"
+                data-dismiss="toast"
+                aria-label="Close"
+              >
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="toast-body">Movie Successfully Added.</div>
+          </div>
+        </div>
+      </div>
+      <div class="mr-1" style="position: relative">
+        <div style="position: absolute; top: 0; right: 0">
+          <div
+            id="liveToast"
+            class="toast error hide"
+            role="alert"
+            aria-live="assertive"
+            aria-atomic="true"
+            data-delay="4000"
+          >
+            <div>
+              <button
+                type="button"
+                class="close"
+                data-dismiss="toast"
+                aria-label="Close"
+              >
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="toast-body">Inputs can not be left blank.</div>
+          </div>
+        </div>
+      </div>
+    <div id="container">
+        <h2>Film Project</h2>
+        <form action="#" id="filmForm">
+            <input type="text" name="filmName" id="filmName" placeholder="Film Name">
+            <input type="text" name="filmDirector" id="filmDirector" placeholder="Director">
+            <input type="text" name="filmPosterLink" id="filmPosterLink" placeholder="Film Poster Link"> <br>
+            <button type="submit" id="addFilm">Add Film</button>
+        </form>
+
+        <hr>
+        <h2>Films</h2>
+        <hr>
+        <table class="table table-dark">
+            <thead>
+              <tr>
+                <th scope="col">Film Afişi</th>
+                <th scope="col">Film İsmi</th>
+                <th scope="col">Yönetmen</th>
+                
+              </tr>
+            </thead>
+            <tbody id = "films">
+                <!-- <tr>
+                    <td><img src="" class="img-fluid img-thumbnail"></td>
+                    <td></td>
+                    <td></td>
+                    <td><a href="#" id = "delete-film" class = "btn btn-danger">Filmi Sil</a></td>
+                  </tr> -->
+                  <!-- <tr>
+                    <td><img src="" class="img-fluid img-thumbnail"></td>
+                    <td></td>
+                    <td></td>
+                    <td><a href="#" id = "delete-film" class = "btn btn-danger">Filmi Sil</a></td>
+                  </tr> -->
+            </tbody>
+          </table>
+          <hr>
+          <button type="button" id="clearBtn">Clear All Films</button>
+    </div>
+
+
+    <!--Bootstrap JS-->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js"
+        integrity="sha384-+YQ4JLhjyBLPDQt//I+STsc9iw4uQqACwlvpslubQzn4u2UU2UFM80nGisd026JF"
+        crossorigin="anonymous"></script>
+
+        <script src="ui.js"></script>
+        <script src="film.js"></script>
+        <script src="storage.js"></script>
+        <script src="app.js"></script>
+</body>
+
+</html>
