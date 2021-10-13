@@ -3,8 +3,8 @@ const titleDOM = document.querySelector("#filmName");
 const directorDOM = document.querySelector("#filmDirector");
 const linkDOM = document.querySelector("#filmPosterLink");
 const tBody = document.querySelector("#films");
+const clearBtn = document.querySelector("#clearBtn");
 
-const deleteButtons = [];
 
 // UI Objesini başlatma
 const ui = new UI();
@@ -19,6 +19,7 @@ function eventListeners() {
     form.addEventListener("submit", addFilm);
     document.addEventListener("DOMContentLoaded", storage.getFilmsFromStorage());
     tBody.addEventListener("click", deleteFilm);
+    clearBtn.addEventListener("click", deleteAllFilms);
 }
 
 function addFilm(e) {
@@ -45,4 +46,9 @@ function deleteFilm(e) {
         storage.deleteFilmFromStorage(e.target.parentElement.previousElementSibling.previousElementSibling.innerText);
         $(".delete").toast("show");
     }
+}
+
+function deleteAllFilms() {
+    ui.deleteAllFilmsFromUI();
+    storage.deleteAll();
 }

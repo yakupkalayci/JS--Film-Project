@@ -12,7 +12,6 @@ UI.prototype.addFilmtoUI = function(newFilm) {
     <td>${newFilm.director}</td>
     <td><a href="#" id = "delete-film" class = "btn btn-danger">Delete</a></td>
   `
-  deleteButtons.push(document.querySelector("#delete-film"));
 }
 
 UI.prototype.clearInputs = function(element1, element2, element3) {
@@ -23,4 +22,11 @@ UI.prototype.clearInputs = function(element1, element2, element3) {
 
 UI.prototype.deleteFilmFromUI = function(element) {
   tBody.removeChild(element.parentElement.parentElement);
+}
+
+UI.prototype.deleteAllFilmsFromUI = function() {
+  let films = document.querySelectorAll("tbody > tr");
+  films.forEach((film) => {
+    tBody.removeChild(film);
+  })
 }
