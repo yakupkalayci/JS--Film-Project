@@ -21,3 +21,15 @@ Storage.prototype.getFilmsFromStorage = function() {
         uiObject.addFilmtoUI(film);
     })
 }
+
+Storage.prototype.deleteFilmFromStorage = function(element) {
+    let films = JSON.parse(localStorage.getItem(this.name));
+    let deletedFilm = element;
+    for(let i = 0; i < films.length; i++) {
+        if(films[i].title === deletedFilm) {
+            films.splice(i, 1);
+        }
+    }
+
+    localStorage.setItem(this.name, JSON.stringify(films));
+}
